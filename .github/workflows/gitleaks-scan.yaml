@@ -1,0 +1,58 @@
+name: Gitleaks Security Scan
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+jobs:
+  gitleaks:
+    name: Scan for Secrets
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for comprehensive scan
+
+      - name: Run Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_ENABLE_SUMMARY: true
+
+      - name: Upload SARIF report
+        if: always()
+        continue-on-error: true  # Don't fail if code scanning isn't enabled
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: results.sarif
+          category: gitleaks
+
+      - name: Generate detailed report
+        if: always()
+        run: |
+          echo "## 🔍 Gitleaks Security Scan Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f results.sarif ]; then
+            FINDINGS=$(jq '.runs[0].results | length' results.sarif 2>/dev/null || echo "0")
+            echo "**Findings:** $FINDINGS potential secrets detected" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            if [ "$FINDINGS" -gt "0" ]; then
+              echo "⚠️ **Action Required:** Review the Security tab for details" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "✅ **No secrets detected**" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "✅ **No secrets detected**" >> $GITHUB_STEP_SUMMARY
+          fi

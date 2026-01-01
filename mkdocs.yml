@@ -1,0 +1,60 @@
+site_name: Jo3 Cluster Documentation
+site_url: https://joseph.zacharie.org/jo3-docs/
+repo_url: https://github.com/JZacharie/jo3-docs
+repo_name: JZacharie/jo3-docs
+edit_uri: ""
+
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: lime
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+    - content.code.annotate
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - Infrastructure:
+      - Nodes: infrastructure/nodes.md
+      - Storage: infrastructure/storage.md
+  - Applications:
+      - Observability: applications/observability.md
+      - Productivity: applications/productivity.md
+      - Security: applications/security.md
+      - AI: applications/ai.md
+      - Media: applications/media.md
