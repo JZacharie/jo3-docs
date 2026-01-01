@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://joseph.zacharie.org/jo3-docs/</loc>
+         <loc>https://jzacharie.github.io/jo3-docs/</loc>
          <lastmod>2026-01-01</lastmod>
     </url>
     <url>
-         <loc>https://joseph.zacharie.org/jo3-docs/architecture/</loc>
+         <loc>https://jzacharie.github.io/jo3-docs/architecture/</loc>
          <lastmod>2026-01-01</lastmod>
     </url>
     <url>
-         <loc>https://joseph.zacharie.org/jo3-docs/applications/ai/</loc>
+         <loc>https://jzacharie.github.io/jo3-docs/applications/ai/</loc>
          <lastmod>2026-01-01</lastmod>
     </url>
     <url>
-         <loc>https://joseph.zacharie.org/jo3-docs/applications/media/</loc>
+         <loc>https://jzacharie.github.io/jo3-docs/applications/media/</loc>
          <lastmod>2026-01-01</lastmod>
     </url>
     <url>
-         <loc>https://joseph.zacharie.org/jo3-docs/applications/observability/</loc>
+         <loc>https://jzacharie.github.io/jo3-docs/applications/observability/</loc>
          <lastmod>2026-01-01</lastmod>
     </url>
     <url>
-         <loc>https://joseph.zacharie.org/jo3-docs/applications/productivity/</loc>
+         <loc>https://jzacharie.github.io/jo3-docs/applications/productivity/</loc>
          <lastmod>2026-01-01</lastmod>
     </url>
     <url>
-         <loc>https://joseph.zacharie.org/jo3-docs/applications/security/</loc>
+         <loc>https://jzacharie.github.io/jo3-docs/applications/security/</loc>
          <lastmod>2026-01-01</lastmod>
     </url>
     <url>
-         <loc>https://joseph.zacharie.org/jo3-docs/infrastructure/nodes/</loc>
+         <loc>https://jzacharie.github.io/jo3-docs/infrastructure/nodes/</loc>
          <lastmod>2026-01-01</lastmod>
     </url>
     <url>
-         <loc>https://joseph.zacharie.org/jo3-docs/infrastructure/storage/</loc>
+         <loc>https://jzacharie.github.io/jo3-docs/infrastructure/storage/</loc>
          <lastmod>2026-01-01</lastmod>
     </url>
 </urlset>
