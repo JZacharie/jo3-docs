@@ -5,7 +5,7 @@ This repository contains the source code for the **Jo3 Cluster Documentation**.
 ## 📖 View Documentation
 
 The full documentation is available at:
-**[https://joseph.zacharie.org/jo3-docs/](https://joseph.zacharie.org/jo3-docs/)**
+**[https://jzacharie.github.io/jo3-docs/](https://jzacharie.github.io/jo3-docs/)**
 
 ## 🛠 Building Locally
 
